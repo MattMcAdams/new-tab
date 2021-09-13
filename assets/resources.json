@@ -1,0 +1,18 @@
+[
+  {
+    "title": "Stock Imagery",
+    "items": [
+      {"title": "UnSplash", "link": "https://unsplash.com/"},
+      {"title": "UnDraw", "link": "https://undraw.co/"},
+      {"title": "Picsum", "link": "https://picsum.photos/"},
+      {"title": "SVG Backgrounds", "link": "https://bgjar.com/"}
+    ]
+  },
+  {
+    "title": "Typography",
+    "items": [
+      {"title": "Good Fonts", "link": "https://drive.google.com/drive/folders/1CuweD8Rpp21GBOpHsXtri3tEY7XIyLnz?usp=sharing"},
+      {"title": "Type Scale", "link": "https://type-scale.com/"}
+    ]
+  }
+]
