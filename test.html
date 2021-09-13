@@ -41,7 +41,7 @@
 
     fetch("assets/resources.json")
         .then(response => response.json())
-        .then(json => console.log(json));
+        .then(json => renderResourceLists(json));
 
   </script>
 </body>
