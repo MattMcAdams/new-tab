@@ -1,15 +1,5 @@
-# Chrome New Tab Extention
+# New Tab Page
 
-This is a small extention to display a local HTML file on the Chrome "New Tab" Page. You might want to do this if you want to create your own fully customizable new tab page, just the way you like it.
+[![Netlify Status](https://api.netlify.com/api/v1/badges/265ffc23-9376-42ec-951f-a255b8679fb0/deploy-status)](https://app.netlify.com/sites/ntp-mattmcadams/deploys)
 
-I'm using mine to display and group bookmarks in a more user friendly way. You could also get creative and pull data from any number of APIs to make your own dashboard. The posibilities are endless.
-
-## Instructions
-
-1. Fork this repository to make your own. Set the fork to private if your new tab page has confidential information.
-2. Clone the repository to your local environment
-3. Go to chrome://extensions/ and turn on "Developer Mode"
-4. Click "Load Unpacked" and select this repository's folder
-5. Make all the changes your heart desires!
-
-This repo contains basic HTML / CSS to get something going reletively fast. Feel free to delete all of it and start from scratch. All you really need is the manifest.json and an index.html.
+This is my personal new tab page, served from ntp.mattmcadams.com! This is supposed to be unindexed and private, so if you've found your way here, congrats on finding this little project. Please let me know how you found it by sending me an email at mattmcadams@outlook.com.
