@@ -7,12 +7,14 @@
   --font-head: var(--font-body);
   --font-mono: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
 
-  --background-color: rgb(53, 54, 58);
+  --background-color: #343439;
+  --text-color: #EAEAEA;
+  --heading-color: var(--text-color);
+
   --color-primary: #4299E1;
   --color-accent: var(--color-primary);
   --element-bg-color: #EDF2F7;
-  --text-color: #1A202C;
-  --heading-color: var(--text-color);
+
   --light-text-color: #A0AEC0;
   --link-color: var(--color-primary);
   --button-color: var(--link-color);
