@@ -12,7 +12,25 @@
     "title": "Typography",
     "items": [
       {"title": "Good Fonts", "link": "https://drive.google.com/drive/folders/1CuweD8Rpp21GBOpHsXtri3tEY7XIyLnz?usp=sharing"},
-      {"title": "Type Scale", "link": "https://type-scale.com/"}
+      {"title": "Type Scale", "link": "https://type-scale.com/"},
+      {"title": "Grid Lover", "Link": "https://www.gridlover.net/try"},
+      {"title": "Wordmark.it", "Link": "https://wordmark.it/"},
+      {"title": "Google Fonts", "Link": "https://fonts.google.com/"},
+      {"title": "Lorem Ipsom", "Link": "https://loremipsum.io/"}
+    ]
+  },
+  {
+    "title": "Color",
+    "items": [
+      {"title": "Color Scale", "link": "https://hihayk.github.io/scale/#4/6/50/80/-51/67/20/14/1D9A6C/29/154/108/white"},
+      {"title": "Color Converter", "link": "https://colouris.surge.sh/"},
+      {"title": "Grabient", "Link": "https://www.grabient.com/"},
+      {"title": "Color x Color", "Link": "https://colorcolor.in/"},
+      {"title": "Color Palette Generator", "Link": "https://coolors.co/"},
+      {"title": "Leonardo Color", "Link": "https://leonardocolor.io/?colorKeys=%236fa7ff&base=ffffff&ratios=3%2C4.5&mode=CAM02"},
+      {"title": "Tailwind Colors", "link": "https://tailwindcss.com/docs/customizing-colors#color-palette-reference"},
+      {"title": "Color Codes", "link": "https://htmlcolorcodes.com/"},
+      {"title": "Color Review", "link": "https://color.review/"}
     ]
   }
 ]

@@ -30,9 +30,14 @@
       --gray: #757575;
       --slate: #7D8F9B;
       --ui-black: #27272A;
-      --ui-dark-gray: #3F3F46;
+      --ui-dark-gray: #343439;
       --ui-light-gray: #C9C9C9;
       --ui-white: #EAEAEA;
+    }
+
+    body {
+      background: var(--ui-white);
+      color: var(--ui-black);
     }
 
     h1, h2 {
@@ -40,22 +45,52 @@
       font-weight: bold;
       font-size: var(--ms-4);
     }
+    h3 {
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: var(--ms-2);
+    }
     h1::before, h2::before { content: "//:"; }
     h1::after, h2::after { content: "_"; }
+    button img { margin: 0; }
 
-    #NTP {
-      background: #343439;
-      color: white;
-      padding: var(--section-space) 0;
+
+
+    header {
+      padding-top: var(--section-space);
+      background: var(--ui-dark-gray);
+      color: var(--ui-white);
     }
-
-    #header {
+    header > div {
       display: grid;
       grid-template-columns: 2fr 6fr;
       grid-gap: var(--space);
     }
-    #header form {
-      display: flex;
+    header h1 { margin: 0; }
+    header form { display: flex; }
+    header input {
+      border: none;
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+      background: var(--ui-white);
+      color: var(--ui-black);
+      margin: 0;
+    }
+    header button {
+      background: var(--ui-white);
+      border: none;
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+      color: var(--ui-black);
+      margin: 0;
+    }
+
+
+
+    #NTP {
+      background: var(--ui-dark-gray);
+      color: var(--ui-white);
+      padding: var(--section-space) 0;
     }
 
     .ntp-links {
@@ -64,176 +99,209 @@
       grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
       grid-gap: var(--space);
     }
-    .ntp-links img {
+    .ntp-links + .ntp-links {
+      border-top: 2px solid var(--gray);
+      padding-top: calc(var(--section-space) / 2);
+      margin-top: calc(var(--section-space) / 2);
+    }
+    .ntp-links li img {
       background: var(--color);
       border-radius: 10px;
       margin: 0;
     }
-    .ntp-links a {
-      color: inherit;
-      font-weight: normal;
-    }
-    .ntp-links a:hover {
-      text-decoration: none;
-    }
-    .ntp-links a:hover img {
-      transform: scale(1.05);
-    }
-    .ntp-links p {
+    .ntp-links li p {
       margin: 0;
       text-align: center;
       font-size: var(--ms--1);
       margin-top: 5px;
+    }
+    .ntp-links li a {
+      color: inherit;
+      font-weight: normal;
+    }
+    .ntp-links li a:hover { text-decoration: none; }
+    .ntp-links li a:hover img { transform: scale(1.05); }
+
+
+
+    #Resources h2 {
+      margin-bottom: var(--section-space);
+    }
+    #Resources ul, ol, li {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    #Resources ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      grid-gap: var(--space);
+    }
+    #Resources a {
+      color: inherit;
+      font-weight: normal;
+      display: block;
+      padding: 0.5rem;
+      border-bottom: 1px solid var(--ui-light-gray);
+      margin-bottom: 1px;
+    }
+    #Resources a:hover {
+      text-decoration: none;
+      border-bottom: 2px solid var(--blue);
+      margin-bottom: 0;
     }
   </style>
 
 
 </head>
 <body>
-  <main>
-    <section id="NTP"><div class="container">
-      <div id="header">
-        <h1>NTP</h1>
-        <form id="searchForm">
-          <input type="search" id="search">
-          <button onclick="searchRedirect()"><span class="sr-only">Search</span>Go</button>
-        </form>
-      </div>
-      <div class="section">
-        <ul class="ntp-links">
-          <li style="--color: var(--red)">
-            <a href="https://mybama.ua.edu/">
-            <img src="assets/images/ua.svg" alt="">
-            <p>MyBama</p></a>
-          </li>
-          <li style="--color: var(--blue)">
-            <a href="https://alabama.app.box.com/">
-            <img src="assets/images/box.svg" alt="">
-            <p>Box</p></a>
-          </li>
-          <li style="--color: var(--indego)">
-            <a href="https://outlook.office365.com/mail/inbox">
-            <img src="assets/images/outlook.svg" alt="">
-            <p>Outlook</p></a>
-          </li>
-          <li style="--color: var(--gray)">
-            <a href="https://cuc01.ua.edu/inbox/">
-            <img src="assets/images/phone.svg" alt="">
-            <p>VoIP Mailbox</p></a>
-          </li>
-          <li style="--color: var(--light-blue)">
-            <a href="https://trello.com/b/C8xKHDW7/ops">
-            <img src="assets/images/trello.svg" alt="">
-            <p>Trello</p></a>
-          </li>
-          <li style="--color: var(--light-green)">
-            <a href="https://app.slack.com/client/T03CPUJKH/D01BJC9KEQ1">
-            <img src="assets/images/slack.svg" alt="">
-            <p>Slack</p></a>
-          </li>
-          <li style="--color: var(--yellow)">
-            <a href="https://analytics.google.com/analytics/web/#/report-home/a850379w1463618p1464686">
-            <img src="assets/images/analytics.svg" alt="">
-            <p>Analytics</p></a>
-          </li>
-          <li style="--color: var(--cyan)">
-            <a href="https://bitbucket.org/uaweb/">
-            <img src="assets/images/bitbucket.svg" alt="">
-            <p>BitBucket</p></a>
-          </li>
-          <li style="--color: var(--green)">
-            <a href="https://ua.beanstalkapp.com/">
-            <img src="assets/images/leaf.svg" alt="">
-            <p>Beanstalk</p></a>
-          </li>
-          <li style="--color: var(--teal)">
-            <a href="https://ua.levelaccess.net/login.php">
-            <img src="assets/images/shield.svg" alt="">
-            <p>AMP</p></a>
-          </li>
-          <li style="--color: var(--deep-orange)">
-            <a href="https://app.dynomapper.com/user">
-            <img src="assets/images/map.svg" alt="">
-            <p>DynoMapper</p></a>
-          </li>
-          <li style="--color: var(--yellow)">
-            <a href="https://3.basecamp.com/3736336/projects">
-            <img src="assets/images/basecamp.svg" alt="">
-            <p>BaseCamp</p></a>
-          </li>
-          <li style="--color: var(--red)">
-            <a href="https://hr.ua.edu/payroll/payroll-schedules">
-            <img src="assets/images/link.svg" alt="">
-            <p>Payroll</p></a>
-          </li>
-          <li style="--color: var(--indego)">
-            <a href="https://whimsical.com/">
-            <img src="assets/images/whimsical.svg" alt="">
-            <p>Whimsical</p></a>
-          </li>
-          <li style="--color: var(--brown)">
-            <a href="https://uaphotos.photoshelter.com/sso-login">
-            <img src="assets/images/image.svg" alt="">
-            <p>Photo Library</p></a>
-          </li>
-          <li style="--color: var(--gray)">
-            <a href="https://live.browserstack.com/dashboard">
-            <img src="assets/images/link.svg" alt="">
-            <p>BrowserStack</p></a>
-          </li>
-        </ul>
-      </div>
+  <header>
+    <div class="container">
+      <h1>NTP</h1>
+      <form id="searchForm">
+        <input type="search" id="search" placeholder="Search or enter URL">
+        <button onclick="searchRedirect()">
+          <span class="sr-only">Search</span>
+          <img src="assets/images/arrow.svg"alt="">
+        </button>
+      </form>
+    </div>
+  </header>
 
-      <div>
-        <ul class="ntp-links">
-          <li style="--color: var(--cyan)">
-            <a href="https://mattmcadams.com">
-            <img src="assets/images/website.svg" alt="">
-            <p>Website</p></a>
-          </li>
-          <li style="--color: var(--slate)">
-            <a href="https://github.com/MattMcAdams/website">
-            <img src="assets/images/github.svg" alt="">
-            <p>GitHub</p></a>
-          </li>
-          <li style="--color: var(--teal)">
-            <a href="https://app.netlify.com/teams/mattmcadams/overview">
-            <img src="assets/images/netlify.svg" alt="">
-            <p>Netlify</p></a>
-          </li>
-          <li style="--color: var(--light-green)">
-            <a href="https://www.hover.com/control_panel">
-            <img src="assets/images/hover.svg" alt="">
-            <p>Hover</p></a>
-          </li>
-          <li style="--color: var(--indego)">
-            <a href="https://dashboard.stripe.com/">
-            <img src="assets/images/stripe.svg" alt="">
-            <p>Stripe</p></a>
-          </li>
-          <li style="--color: var(--red)">
-            <a href="https://drive.google.com/drive/u/0/my-drive">
-            <img src="assets/images/drive.svg" alt="">
-            <p>Drive</p></a>
-          </li>
-          <li style="--color: var(--orange)">
-            <a href="https://search.google.com/u/1/search-console?resource_id=sc-domain%3Amattmcadams.com">
-            <img src="assets/images/google.svg" alt="">
-            <p>Search Console</p></a>
-          </li>
-          <li style="--color: var(--blue)">
-            <a href="https://plausible.io/mattmcadams.com">
-            <img src="assets/images/plausible.svg" alt="">
-            <p>Plausible</p></a>
-          </li>
-          <li style="--color: var(--brown)">
-            <a href="https://console.cloud.google.com/storage/browser/mattmcadams.com">
-            <img src="assets/images/gcloud.svg" alt="">
-            <p>Cloud Storage</p></a>
-          </li>
-        </ul>
-      </div>
-    </div></section>
+  <main>
+
+    <section id="NTP">
+      <ul class="ntp-links container">
+        <li style="--color: var(--red)">
+          <a href="https://mybama.ua.edu/">
+          <img src="assets/images/ua.svg" alt="">
+          <p>MyBama</p></a>
+        </li>
+        <li style="--color: var(--blue)">
+          <a href="https://alabama.app.box.com/">
+          <img src="assets/images/box.svg" alt="">
+          <p>Box</p></a>
+        </li>
+        <li style="--color: var(--indego)">
+          <a href="https://outlook.office365.com/mail/inbox">
+          <img src="assets/images/outlook.svg" alt="">
+          <p>Outlook</p></a>
+        </li>
+        <li style="--color: var(--gray)">
+          <a href="https://cuc01.ua.edu/inbox/">
+          <img src="assets/images/phone.svg" alt="">
+          <p>VoIP Mailbox</p></a>
+        </li>
+        <li style="--color: var(--light-blue)">
+          <a href="https://trello.com/b/C8xKHDW7/ops">
+          <img src="assets/images/trello.svg" alt="">
+          <p>Trello</p></a>
+        </li>
+        <li style="--color: var(--light-green)">
+          <a href="https://app.slack.com/client/T03CPUJKH/D01BJC9KEQ1">
+          <img src="assets/images/slack.svg" alt="">
+          <p>Slack</p></a>
+        </li>
+        <li style="--color: var(--yellow)">
+          <a href="https://analytics.google.com/analytics/web/#/report-home/a850379w1463618p1464686">
+          <img src="assets/images/analytics.svg" alt="">
+          <p>Analytics</p></a>
+        </li>
+        <li style="--color: var(--cyan)">
+          <a href="https://bitbucket.org/uaweb/">
+          <img src="assets/images/bitbucket.svg" alt="">
+          <p>BitBucket</p></a>
+        </li>
+        <li style="--color: var(--green)">
+          <a href="https://ua.beanstalkapp.com/">
+          <img src="assets/images/leaf.svg" alt="">
+          <p>Beanstalk</p></a>
+        </li>
+        <li style="--color: var(--teal)">
+          <a href="https://ua.levelaccess.net/login.php">
+          <img src="assets/images/shield.svg" alt="">
+          <p>AMP</p></a>
+        </li>
+        <li style="--color: var(--deep-orange)">
+          <a href="https://app.dynomapper.com/user">
+          <img src="assets/images/map.svg" alt="">
+          <p>DynoMapper</p></a>
+        </li>
+        <li style="--color: var(--yellow)">
+          <a href="https://3.basecamp.com/3736336/projects">
+          <img src="assets/images/basecamp.svg" alt="">
+          <p>BaseCamp</p></a>
+        </li>
+        <li style="--color: var(--red)">
+          <a href="https://hr.ua.edu/payroll/payroll-schedules">
+          <img src="assets/images/link.svg" alt="">
+          <p>Payroll</p></a>
+        </li>
+        <li style="--color: var(--indego)">
+          <a href="https://whimsical.com/">
+          <img src="assets/images/whimsical.svg" alt="">
+          <p>Whimsical</p></a>
+        </li>
+        <li style="--color: var(--brown)">
+          <a href="https://uaphotos.photoshelter.com/sso-login">
+          <img src="assets/images/image.svg" alt="">
+          <p>Photo Library</p></a>
+        </li>
+        <li style="--color: var(--gray)">
+          <a href="https://live.browserstack.com/dashboard">
+          <img src="assets/images/link.svg" alt="">
+          <p>BrowserStack</p></a>
+        </li>
+      </ul>
+
+      <ul class="ntp-links container">
+        <li style="--color: var(--cyan)">
+          <a href="https://mattmcadams.com">
+          <img src="assets/images/website.svg" alt="">
+          <p>Website</p></a>
+        </li>
+        <li style="--color: var(--slate)">
+          <a href="https://github.com/MattMcAdams/website">
+          <img src="assets/images/github.svg" alt="">
+          <p>GitHub</p></a>
+        </li>
+        <li style="--color: var(--teal)">
+          <a href="https://app.netlify.com/teams/mattmcadams/overview">
+          <img src="assets/images/netlify.svg" alt="">
+          <p>Netlify</p></a>
+        </li>
+        <li style="--color: var(--light-green)">
+          <a href="https://www.hover.com/control_panel">
+          <img src="assets/images/hover.svg" alt="">
+          <p>Hover</p></a>
+        </li>
+        <li style="--color: var(--indego)">
+          <a href="https://dashboard.stripe.com/">
+          <img src="assets/images/stripe.svg" alt="">
+          <p>Stripe</p></a>
+        </li>
+        <li style="--color: var(--red)">
+          <a href="https://drive.google.com/drive/u/0/my-drive">
+          <img src="assets/images/drive.svg" alt="">
+          <p>Drive</p></a>
+        </li>
+        <li style="--color: var(--orange)">
+          <a href="https://search.google.com/u/1/search-console?resource_id=sc-domain%3Amattmcadams.com">
+          <img src="assets/images/google.svg" alt="">
+          <p>Search Console</p></a>
+        </li>
+        <li style="--color: var(--blue)">
+          <a href="https://plausible.io/mattmcadams.com">
+          <img src="assets/images/plausible.svg" alt="">
+          <p>Plausible</p></a>
+        </li>
+        <li style="--color: var(--brown)">
+          <a href="https://console.cloud.google.com/storage/browser/mattmcadams.com">
+          <img src="assets/images/gcloud.svg" alt="">
+          <p>Cloud Storage</p></a>
+        </li>
+      </ul>
+    </section>
 
     <section id="Resources" class="section">
       <div class="container">
@@ -245,7 +313,7 @@
   <script>
     function renderResourceLists(data) {
       data.forEach(list => {
-        let parent = document.getElementById("Resources");
+        let parent = document.querySelector("#Resources .container");
         let container = document.createElement("div");
         let title = document.createElement("h3");
         let ul = document.createElement("ul");
