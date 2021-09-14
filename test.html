@@ -45,6 +45,8 @@
       font-weight: bold;
       font-size: var(--ms-4);
     }
+    h2 { margin-bottom: var(--section-space); }
+    h2:first-child { margin-top: 0; }
     h3 {
       text-transform: uppercase;
       font-weight: bold;
@@ -124,9 +126,83 @@
 
 
 
-    #Resources h2 {
-      margin-bottom: var(--section-space);
+    #Reference {
+      background: var(--ui-black);
+      color: var(--ui-white);
+      padding: var(--section-space);
+      position: relative;
     }
+    #Reference dl {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      grid-column-gap: var(--space);
+    }
+    #Reference dl div {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      padding: 0.5rem;
+      border-bottom: 1px solid var(--ui-light-gray);
+    }
+    #Reference dt,
+    #Reference dd {
+      margin: 0;
+      padding: 0;
+    }
+    #Reference a { color: inherit; }
+    #Reference a:hover { text-decoration-color: inherit; }
+    #Reference::after {
+      content: "";
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='370.451' height='60.58' viewBox='0 0 370.451 60.58'%3E%3Cpath id='Path_28' data-name='Path 28' d='M0,0H370.451V60.58H111.626Z' fill='%2327272a'/%3E%3C/svg%3E");
+      position: absolute;
+      bottom: -39px;
+      right: 0;
+      height: 40px;
+      width: 200px;
+    }
+    #Reference::before {
+      content: "";
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='370.451' height='60.58' viewBox='0 0 370.451 60.58'%3E%3Cpath id='Path_28' data-name='Path 28' d='M370.451,60.58H0V0H258.825Z' fill='%2327272a'/%3E%3C/svg%3E%0A");
+      position: absolute;
+      top: -39px;
+      left: -150px;
+      height: 40px;
+      width: 350px;
+    }
+    #Reference .design-toolkit {
+      display: grid;
+      grid-template-columns: 3fr 1fr;
+      grid-gap: var(--section-space);
+    }
+    .design-toolkit .color-swatch .swatch {
+      height: 2.2rem;
+      width: 2.2rem;
+      border: 1px solid var(--ui-white);
+      background: var(--color);
+      border-radius: 5px;
+    }
+    .design-toolkit .colors {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+    .design-toolkit .color-swatch {
+      display: grid;
+      grid-template-columns: 2.2rem 1fr;
+      grid-gap: 5px;
+    }
+    .design-toolkit .color-swatch p,
+    .design-toolkit .font-group {
+      line-height: 1.2;
+    }
+    .design-toolkit .color-swatch strong,
+    .design-toolkit .font-group strong {
+      display: block;
+      font-weight: normal;
+      font-size: var(--ms--1);
+      margin: 0;
+    }
+
+
+
     #Resources ul, ol, li {
       margin: 0;
       padding: 0;
@@ -135,7 +211,7 @@
     #Resources ul {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      grid-gap: var(--space);
+      grid-column-gap: var(--space);
     }
     #Resources a {
       color: inherit;
@@ -149,6 +225,15 @@
       text-decoration: none;
       border-bottom: 2px solid var(--blue);
       margin-bottom: 0;
+    }
+
+
+
+    footer p {
+      text-align: right;
+      margin: 0;
+      padding: var(--space);
+      opacity: 0.5;
     }
   </style>
 
@@ -303,11 +388,163 @@
       </ul>
     </section>
 
+    <section id="Reference">
+      <div class="container">
+        <h2>Reference</h2>
+        <h3>HTML Entities</h3>
+        <dl>
+          <div><dt>&#9829;</dt><dd>&amp;#9829;</dd></div>
+          <div><dt>&sect;</dt><dd>&amp;sect;</dd></div>
+          <div><dt>&middot;</dt><dd>&amp;middot;</dd></div>
+          <div><dt>&deg;</dt><dd>&amp;deg;</dd></div>
+          <div><dt>&times;</dt><dd>&amp;times;</dd></div>
+          <div><dt>&cent;</dt><dd>&amp;cent;</dd></div>
+          <div><dt>&reg;</dt><dd>&amp;reg;</dd></div>
+          <div><dt>&copy;</dt><dd>&amp;copy;</dd></div>
+        </dl>
+        <p><a href="https://dev.w3.org/html5/html-author/charref">Full List</a></p>
+
+        <div class="design-toolkit">
+          <div>
+            <h3>UA Colors</h3>
+            <ul class="colors">
+              <li class="color-swatch">
+                <div class="swatch" style="--color: #333333;"></div>
+                <p class="label"><strong>Gray</strong>#333333</p>
+              </li>
+              <li class="color-swatch">
+                <div class="swatch" style="--color: #992020;"></div>
+                <p class="label"><strong>Crimson</strong>#992020</p>
+              </li>
+              <li class="color-swatch">
+                <div class="swatch" style="--color: #FFFFFF;"></div>
+                <p class="label"><strong>White</strong>#FFFFFF</p>
+              </li>
+              <li class="color-swatch">
+                <div class="swatch" style="--color: #000000;"></div>
+                <p class="label"><strong>Black</strong>#000000</p>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3>UA Fonts</h3>
+            <p class="font-group">
+              <strong>Headings</strong>
+              Soleil
+            </p>
+            <p class="font-group">
+              <strong>Body</strong>
+              Open Sans
+            </p>
+            <p class="font-group">
+              <strong>Accent</strong>
+              Gibson Heavy
+            </p>
+          </div>
+        </div>
+
+        <div class="design-toolkit">
+          <div>
+            <h3>Colors</h3>
+            <ul class="colors">
+              <li class="color-swatch">
+                <div class="swatch" style="--color: #F3F4F6;"></div>
+                <p class="label"><strong>Gray 100</strong>#F3F4F6</p>
+              </li>
+              <li class="color-swatch">
+                <div class="swatch" style="--color: #667791;"></div>
+                <p class="label"><strong>Gray 500</strong>#667791</p>
+              </li>
+              <li class="color-swatch">
+                <div class="swatch" style="--color: #334155;"></div>
+                <p class="label"><strong>Gray 800</strong>#334155</p>
+              </li>
+              <li class="color-swatch">
+                <div class="swatch" style="--color: #1E293B;"></div>
+                <p class="label"><strong>Gray 900</strong>#1E293B</p>
+              </li>
+              <li class="color-swatch">
+                <div class="swatch" style="--color: #E6F1FF;"></div>
+                <p class="label"><strong>Primary 100</strong>#E6F1FF</p>
+              </li>
+              <li class="color-swatch">
+                <div class="swatch" style="--color: #E6F7EB;"></div>
+                <p class="label"><strong>Green 100</strong>#E6F7EB</p>
+              </li>
+              <li class="color-swatch">
+                <div class="swatch" style="--color: #FFF9E6;"></div>
+                <p class="label"><strong>Yellow 100</strong>#FFF9E6</p>
+              </li>
+              <li class="color-swatch">
+                <div class="swatch" style="--color: #FFE6E6;"></div>
+                <p class="label"><strong>Red 100</strong>#FFE6E6</p>
+              </li>
+              <li class="color-swatch">
+                <div class="swatch" style="--color: #0074E0;"></div>
+                <p class="label"><strong>Primary 500</strong>#0074E0</p>
+              </li>
+              <li class="color-swatch">
+                <div class="swatch" style="--color: #00883E;"></div>
+                <p class="label"><strong>Green 500</strong>#00883E</p>
+              </li>
+              <li class="color-swatch">
+                <div class="swatch" style="--color: #D08200;"></div>
+                <p class="label"><strong>Yellow 500</strong>#D08200</p>
+              </li>
+              <li class="color-swatch">
+                <div class="swatch" style="--color: #DC2F2F;"></div>
+                <p class="label"><strong>Red 500</strong>#DC2F2F</p>
+              </li>
+              <li class="color-swatch">
+                <div class="swatch" style="--color: #052E55;"></div>
+                <p class="label"><strong>Primary 800</strong>#052E55</p>
+              </li>
+              <li class="color-swatch">
+                <div class="swatch" style="--color: #033419;"></div>
+                <p class="label"><strong>Green 800</strong>#033419</p>
+              </li>
+              <li class="color-swatch">
+                <div class="swatch" style="--color: #4F3304;"></div>
+                <p class="label"><strong>Yellow 800</strong>#4F3304</p>
+              </li>
+              <li class="color-swatch">
+                <div class="swatch" style="--color: #551616;"></div>
+                <p class="label"><strong>Red 800</strong>#551616</p>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3>Fonts</h3>
+            <p class="font-group">
+              <strong>Headings</strong>
+              Recursive Bold
+            </p>
+            <p class="font-group">
+              <strong>Body</strong>
+              Recursive Regular
+            </p>
+            <p class="font-group">
+              <strong>Accent</strong>
+              Recursive Slant
+            </p>
+            <p class="font-group">
+              <strong>Code</strong>
+              Recursive Mono
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="Resources" class="section">
       <div class="container">
         <h2>Resources</h2>
       </div>
     </section>
+
+    <footer>
+      <p>&copy; 2021 Matthew McAdams</p>
+    </footer>
   </main>
 
   <script>
