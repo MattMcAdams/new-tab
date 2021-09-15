@@ -1,0 +1,18 @@
+{
+  "manifest_version": 2,
+  "name": "NTP",
+  "version": "1.0.0",
+  "description": "Uses a local HTML file as the new tab page",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "ntp@mattmcadams.com"
+    }
+  },
+  "permissions": ["bookmarks"],
+  "chrome_settings_overrides": {
+    "homepage": "index.html"
+  },
+  "chrome_url_overrides" : {
+    "newtab": "index.html"
+  }
+}

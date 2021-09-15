@@ -5,7 +5,6 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>New Tab</title>
-  <meta name="description" content="A simple, modern CSS boilerplate">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="assets/index.css">
 
@@ -33,6 +32,10 @@
       --ui-dark-gray: #343439;
       --ui-light-gray: #C9C9C9;
       --ui-white: #EAEAEA;
+    }
+
+    ::selection {
+      color: var(--ui-black);
     }
 
     body {
@@ -245,7 +248,7 @@
       <h1>NTP</h1>
       <form id="searchForm">
         <input type="search" id="search" placeholder="Search or enter URL">
-        <button onclick="searchRedirect()">
+        <button id="searchSubmit">
           <span class="sr-only">Search</span>
           <img src="assets/images/arrow.svg"alt="">
         </button>
@@ -546,64 +549,5 @@
       <p>&copy; 2021 Matthew McAdams</p>
     </footer>
   </main>
-
-  <script>
-    function renderResourceLists(data) {
-      data.forEach(list => {
-        let parent = document.querySelector("#Resources .container");
-        let container = document.createElement("div");
-        let title = document.createElement("h3");
-        let ul = document.createElement("ul");
-
-        parent.appendChild(container);
-        container.appendChild(title);
-        container.appendChild(ul);
-
-        title.innerHTML = list.title;
-
-        list.items.forEach(item => {
-          let li = document.createElement("li");
-          let a = document.createElement("a");
-          let text = document.createTextNode(item.title);
-          a.setAttribute("href", item.link);
-          a.appendChild(text);
-          li.appendChild(a);
-          ul.appendChild(li);
-        })
-      });
-    }
-
-    fetch("assets/resources.json")
-        .then(response => response.json())
-        .then(json => renderResourceLists(json));
-
-
-    document.getElementById("searchForm").addEventListener('submit', handleForm);
-    function handleForm(event) { event.preventDefault(); }
-
-    var scheme = "https://";
-
-    function searchRedirect() {
-        let value = document.getElementById("search").value;
-
-        if (value.startsWith("https://") | value.startsWith("http://")) {
-          window.location.href = value;
-        }
-        else if (
-          value.includes(".com") |
-          value.includes(".org") |
-          value.includes(".edu") |
-          value.includes(".net") |
-          value.includes(".gov") |
-          value.includes(".io") |
-          value.includes(".dev") |
-          value.includes(".us")
-        ) {
-          window.location.href = scheme + value;
-        }
-        else {
-          window.location.href = "https://duckduckgo.com/?q=" + value;
-        }
-      }
-  </script>
+  <script src="assets/ntp.js"></script>
 </body>
