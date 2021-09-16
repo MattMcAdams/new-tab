@@ -192,10 +192,10 @@ table {
   scroll-margin-bottom: var(--space);
 }
 
-::selection {
+/* ::selection {
   background-color: var(--color-primary-100);
   color: var(--color-gray-900);
-}
+} */
 
 /** -----------------------------------------------------------------
   * SECTION TYPOGRAPHY
@@ -267,7 +267,7 @@ h3 {
   font-size: var(--ms-2);
 }
 
-h1::before, h2::before { content: "//:"; }
+h1::before, h2::before { content: ":// "; }
 h1::after, h2::after { content: "_"; }
 
 h4, .txt-h4 { font-size: var(--ms-1); }
@@ -293,52 +293,6 @@ sub, sup {
 }
 sup { top: -0.5em; }
 sub { bottom: -0.25em; }
-
-/* del, ins, and s styles. Note that these are opinionated and may
- * need to be restyled to suit your use case. These pseudoelements
- * exist to announce the presence of these elements. Read more
- * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ins#accessibility_concerns */
-
-del::before,
-del::after,
-ins::before,
-ins::after,
-s::before,
-s::after {
-  clip-path: inset(100%);
-  clip: rect(1px, 1px, 1px, 1px);
-  height: 1px;
-  overflow: hidden;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-}
-
-del::before { content: " [deletion start] "; }
-del::after { content: " [deletion end] "; }
-ins::before { content: " [insertion start] "; }
-ins::after { content: " [insertion end] "; }
-s::before { content: " [start of stricken text] "; }
-s::after { content: " [end of stricken text] "; }
-
-del {
-  text-decoration: line-through;
-}
-
-ins {
-  text-decoration: none;
-}
-
-/* See https://developer.mozilla.org/en-US/docs/Web/HTML/Element/s */
-
-s { text-decoration: line-through; }
-
-/* Mark styles - see https://developer.mozilla.org/en-US/docs/Web/HTML/Element/mark */
-
-mark {
-  background: var(--color-primary-100);
-  padding: 0.1em 0.3em;
-}
 
 /* Basic styles for abbreviation. Only style differently when
  * a title is present. */
@@ -502,15 +456,6 @@ figcaption {
   font-style: italic;
 }
 
-/* Allow audio to sit correctly in content flow,
- * Adjust border radius to allow consistency across browsers */
-
-audio {
-  display: block;
-  max-width: 100%;
-  border-radius: 900px;
-  margin-bottom: var(--flow-space);
-}
 /* END !SECTION MEDIA */
 /** -----------------------------------------------------------------
   * SECTION TABLES
@@ -747,34 +692,3 @@ input[type="button"][disabled] {
   max-width: calc(var(--content-width) + var(--gutter) + var(--sidebar-width) + var(--section-space))
 }
 /* END !SECTION LAYOUT */
-/** -----------------------------------------------------------------
-  * SECTION ACCORDION
-  * Border radius has been commented out to avoid being too
-  * opinionated, but left in so you can see how to implement it
------------------------------------------------------------------- */
-
-details.accordion summary {
-  display: block;
-  cursor: pointer;
-  padding: calc(var(--space)/2);
-  padding-left: calc(var(--space) + 1em);
-  background: var(--color-gray-200);
-  /*border-radius: 5px;*/
-}
-
-details.accordion summary::before {
-  left: calc(var(--space)/2);
-}
-
-/*details.accordion[open] > summary {
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-}*/
-
-details.accordion .details-content {
-  padding: calc(var(--space) / 2);
-  padding-left: calc(var(--space) + 1rem);
-  border: 2px solid var(--color-gray-200);
-  /*border-bottom-right-radius: 5px;
-  border-bottom-left-radius: 5px;*/
-}

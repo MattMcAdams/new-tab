@@ -1,3 +1,7 @@
+/** -----------------------------------------------------------------
+  * SECTION HEADER
+------------------------------------------------------------------ */
+
 header {
   padding-top: var(--section-space);
   background: var(--color-gray-800);
@@ -5,7 +9,7 @@ header {
 }
 header > div {
   display: grid;
-  grid-gap: var(--space);
+  grid-gap: var(--gutter);
 }
 @media (min-width: 420px) {
   header > div {
@@ -32,7 +36,10 @@ header button:hover {
   background: var(--color-gray-100);
 }
 
-
+/* END !SECTION HEADER */
+/** -----------------------------------------------------------------
+  * SECTION NTP
+------------------------------------------------------------------ */
 
 #NTP {
   background: var(--color-gray-800);
@@ -44,7 +51,7 @@ header button:hover {
   --color: var(--gray);
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-  grid-gap: var(--space);
+  grid-gap: var(--gutter);
 }
 .ntp-links + .ntp-links {
   border-top: 2px solid var(--color-gray-500);
@@ -69,7 +76,10 @@ header button:hover {
 .ntp-links li a:hover { text-decoration: none; }
 .ntp-links li a:hover img { transform: scale(1.05); }
 
-
+/* END !SECTION NTP */
+/** -----------------------------------------------------------------
+  * SECTION REFERENCE
+------------------------------------------------------------------ */
 
 #Reference {
   background: var(--color-gray-900);
@@ -80,7 +90,7 @@ header button:hover {
 #Reference dl {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  grid-column-gap: var(--space);
+  grid-column-gap: var(--gutter);
 }
 #Reference dl div {
   display: grid;
@@ -119,7 +129,7 @@ header button:hover {
 @media (min-width: 500px) {
   #Reference .design-toolkit {
     grid-template-columns: 3fr 1fr;
-    grid-gap: var(--space);
+    grid-gap: var(--gutter);
   }
 }
 @media (min-width: 800px) {
@@ -155,7 +165,10 @@ header button:hover {
   margin: 0;
 }
 
-
+/* END !SECTION REFERENCE */
+/** -----------------------------------------------------------------
+  * SECTION RESOURCES
+------------------------------------------------------------------ */
 
 #Resources ul, ol, li {
   margin: 0;
@@ -165,7 +178,7 @@ header button:hover {
 #Resources ul {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  grid-column-gap: var(--space);
+  grid-column-gap: var(--gutter);
 }
 #Resources a {
   color: inherit;
@@ -181,7 +194,10 @@ header button:hover {
   margin-bottom: 0;
 }
 
-
+/* END !SECTION RESOURCES */
+/** -----------------------------------------------------------------
+  * SECTION FOOTER
+------------------------------------------------------------------ */
 
 footer p {
   text-align: right;
@@ -189,3 +205,5 @@ footer p {
   padding: var(--space);
   opacity: 0.5;
 }
+
+/* END !SECTION FOOTER */

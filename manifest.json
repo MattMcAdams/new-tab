@@ -3,6 +3,10 @@
   "name": "NTP",
   "version": "1.0.0",
   "description": "Uses a local HTML file as the new tab page",
+  "icons": {
+    "48": "assets/icons/icon.png",
+    "96": "assets/icons/icon@2x.png"
+  },
   "browser_specific_settings": {
     "gecko": {
       "id": "ntp@mattmcadams.com"
