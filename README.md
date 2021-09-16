@@ -31,3 +31,13 @@ The primary links at the top are a more difficult problem. Ideally, they would b
 This would be arguably easier than adding the link to the code itself, and would allow links to be quickly added as needed with a default icon until I have time to make one for it.
 
 Regardless of path forward, I don't see any way the reference section can be loaded dynamically. The content and layout are far too custom for it to work. So some part of the extension will always require a version update and new package to update.
+
+## Update 2
+
+I've reworked the main links section to also pull from a bookmarks folder. To handle the icons and colors, I've created a switch statement that checks the title of a bookmark and assigns the icon and color if it matches one I've accounted for.
+
+New links added will be given the default gray color with the generic link icon. Because I'll have to make an update to the extension anyway to add the svg, I've accepted that I'll also just need to update the switch statement.
+
+Because I very rarely add new links to this section, I've accepted this inconvienence.
+
+Theoretically, I could make use of local storage and create an input to upload an image and select a color, but those selections won't sync across browsers. It would be more annoying in the long run to readd all of the colors and stuff to another browser than it is to just update the extension - plus it would take a lot of work to implement.
