@@ -2,42 +2,19 @@
 
 This is my personal new tab page extension for Firefox!
 
+This will only work in Firefox developer edition (until I can figure out how to [sign](https://extensionworkshop.com/documentation/publish/signing-and-distribution-overview/#signing-your-addons) the stupid thing)
+
 ## Updating the addon
 
-Alright so Firefox is extremely difficult to deal with. Security and privacy are great, but holy shit is it difficult to make a simple addon.
+The extension uses the [bookmarks API](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/bookmarks), so new links can be added by adding bookmarks to the correct folders in bookmark manager. An update will be required to add new icons and set colors for new links added in the main links section. An update is also required to change content in the Reference section.
 
 Requirements:
 
-- Will only work in Firefox developer edition (until I can figure out how to sign the stupid thing)
 - Must install [web-ext](https://extensionworkshop.com/documentation/develop/getting-started-with-web-ext/) `sudo npm install --global web-ext`
 - Make any edits
-- IMPORTANT: Update the version number in the manifest
+- Update the version number in the manifest
 - Run `web-ext build` from the root directory
 - Manually remove the old version from firefox
 - Add a new extension from file > select the .zip
 
-Again, this is **extremely** annoying and makes adding a new link overly difficult. This is a piece of cake to do in chrome because it allows you to load an unpacked, unsigned extension. Which means there's no build, no manual updating, etc.
-
-All of this to say, the only solid way forward is to figure out a way to load the lists of links by either 1.) accessing the browser's bookmarks, or 2.) implementing some kind of cloud database ala [Firebase](https://firebase.google.com/?authuser=1) and fetching the data every time, or 3.) making use of the browser local storage in a way that can be synced across browsers.
-
-By forcing the addon to be packaged, versioned, (and [preferably signed](https://extensionworkshop.com/documentation/publish/signing-and-distribution-overview/#signing-your-addons)) they have elimated the practical use of flat file data because it effectively becomes read-only at the moment it is built.
-
-## Update
-
-I've managed to make updating the resources area significantly easier by leveraging the [bookmarks API](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/bookmarks). This will allow dynamic organization of resource links and folders through the bookmark management UI built into the browser, and bookmarks can now be added with the bookmark button in the addrss bar instead of them having to be manually added in the code. This also comes with better sync since the bookmarks are synced to your firefox account.
-
-The primary links at the top are a more difficult problem. Ideally, they would be handled in the bookmarks API as well, but it is not easy to handle the image or color fields this way. One option would be to add a switch statement for each one to add the color and image based on bookmark title, and set a default if it does not match a link supported by the addon. This would enable basic functionality cross browser, allow for easy reorganization of links, removal of links, and temporary addition of new links. Then, to add the color and icon, an update would need to be made to the addon itself to support it.
-
-This would be arguably easier than adding the link to the code itself, and would allow links to be quickly added as needed with a default icon until I have time to make one for it.
-
-Regardless of path forward, I don't see any way the reference section can be loaded dynamically. The content and layout are far too custom for it to work. So some part of the extension will always require a version update and new package to update.
-
-## Update 2
-
-I've reworked the main links section to also pull from a bookmarks folder. To handle the icons and colors, I've created a switch statement that checks the title of a bookmark and assigns the icon and color if it matches one I've accounted for.
-
-New links added will be given the default gray color with the generic link icon. Because I'll have to make an update to the extension anyway to add the svg, I've accepted that I'll also just need to update the switch statement.
-
-Because I very rarely add new links to this section, I've accepted this inconvienence.
-
-Theoretically, I could make use of local storage and create an input to upload an image and select a color, but those selections won't sync across browsers. It would be more annoying in the long run to readd all of the colors and stuff to another browser than it is to just update the extension - plus it would take a lot of work to implement.
+To add color and icon for new primary links, update the switch statement in `ntp.js`, adding the icon svg to the assets/images folder.

@@ -32,7 +32,8 @@ header button {
   border-bottom-right-radius: 5px;
   margin: 0;
 }
-header button:hover {
+header button:hover,
+header button:focus {
   background: var(--color-gray-100);
 }
 
@@ -73,8 +74,10 @@ header button:hover {
   color: inherit;
   font-weight: normal;
 }
-.ntp-links li a:hover { text-decoration: none; }
-.ntp-links li a:hover img { transform: scale(1.05); }
+.ntp-links li a:hover,
+.ntp-links li a:focus { text-decoration: none; }
+.ntp-links li a:hover,
+.ntp-links li a:focus img { transform: scale(1.05); }
 
 /* END !SECTION NTP */
 /** -----------------------------------------------------------------
