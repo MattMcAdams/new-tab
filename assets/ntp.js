@@ -125,12 +125,13 @@ browser.bookmarks.search("NTP Links").then(function (bookmarkLibrary) {
 
     // Return an array of objects inside each folder
     folders.forEach((folder) => {
+
+      let ul = document.createElement("ul");
+      ul.classList = "ntp-links container";
+      parent.appendChild(ul);
+
       browser.bookmarks.getChildren(folder.id).then(function (items) {
         if (linksDebug) { console.log(`%c${folder.title} ${folder.id}`, "font-weight: bold", items); }
-
-        let ul = document.createElement("ul");
-        ul.classList = "ntp-links container";
-        parent.appendChild(ul);
 
         // List every bookmark item
         items.forEach((item) => {
@@ -180,20 +181,20 @@ browser.bookmarks.search("Library").then(function(bookmarkLibrary) {
 
     // Return an array of objects inside each folder
     folders.forEach((folder) => {
+      if(libraryDebug){console.log(`%c${folder.title} ${folder.id}`, "font-weight: bold", items);}
+
+      // Generate list HTML
+      let parent = document.querySelector("#Resources .container");
+      let container = document.createElement("div");
+      let title = document.createElement("h3");
+      let ul = document.createElement("ul");
+      let titleText = document.createTextNode(folder.title);
+      parent.appendChild(container);
+      container.appendChild(title);
+      container.appendChild(ul);
+      title.appendChild(titleText);
+
       browser.bookmarks.getChildren(folder.id).then(function(items) {
-        if(libraryDebug){console.log(`%c${folder.title} ${folder.id}`, "font-weight: bold", items);}
-
-        // Generate list HTML
-        let parent = document.querySelector("#Resources .container");
-        let container = document.createElement("div");
-        let title = document.createElement("h3");
-        let ul = document.createElement("ul");
-        let titleText = document.createTextNode(folder.title);
-        parent.appendChild(container);
-        container.appendChild(title);
-        container.appendChild(ul);
-        title.appendChild(titleText);
-
         // List every bookmark item
         items.forEach((item) => {
           if(item.url) {
