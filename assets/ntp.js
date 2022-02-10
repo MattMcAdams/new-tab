@@ -104,6 +104,26 @@ function iconHandler(link) {
       link.color = "brown";
       link.icon = "assets/images/gcloud.svg";
       break;
+    case "Leave Request":
+      link.color = "orange";
+      link.icon = "assets/images/airplane.svg";
+      break;
+    case "Resources Request":
+      link.color = "brown";
+      link.icon = "assets/images/clipboard.svg";
+      break;
+    case "Ghost":
+      link.color = "blue";
+      link.icon = "assets/images/ghost.svg";
+      break;
+    case "Wilson Playground":
+      link.color = "cyan";
+      link.icon = "assets/images/warning-circle.svg";
+      break;
+    case "GB Sandbox":
+      link.color = "light-blue";
+      link.icon = "assets/images/warning-triangle.svg";
+      break;
     default:
       link.color = "gray";
       link.icon = "assets/images/link.svg";
