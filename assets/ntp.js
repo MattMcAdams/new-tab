@@ -1,45 +1,77 @@
 var libraryDebug = false;
 var linksDebug = false;
 
+var defaults = {
+  "color": "gray",
+  "iconSet": "fa-solid",
+  "icon": "fa-link"
+}
+
+var iconRules = [
+  {
+    "case": "MyBama",
+    "color": "red",
+    "icon": "fa-building-columns"
+  },
+  {
+    "case": "Box",
+    "color": "blue",
+    "icon": "fa-box"
+  },
+  {
+    "case": "Outlook",
+    "color": "indego",
+    "icon": "fa-envelope"
+  },
+  {
+    "case": "VoIP Mailbox",
+    "color": "gray"
+  },
+  {
+    "case": "Trello",
+    "color": "light-blue"
+  },
+  {
+    "case": "Slack",
+    "color": "light-green",
+    "iconSet": "fa-brands",
+    "icon": "fa-slack"
+  },
+  {
+    "case": "Analytics",
+    "color": "yellow"
+  },
+  {
+    "case": "BitBucket",
+    "color": "cyan"
+  },
+  {
+    "case": "Beanstalk",
+    "color": "green"
+  }
+]
+
+
+let test = JSON.parse(localStorage.getItem("ntpPrefs"));
+
+
+function iconHandler (item) {
+  item.color = defaults.color;
+  item.iconSet = defaults.iconSet;
+  item.icon = defaults.icon;
+
+  test.forEach(rule => {
+    if (rule.case == item.title) {
+      if (rule.color) { item.color = rule.color }
+      if (rule.iconSet) { item.iconSet = rule.iconSet }
+      if (rule.icon) { item.icon = rule.icon }
+    }
+  });
+}
+
 // Handle primary links color and icons if bookmark name matches the test case
-function iconHandler(link) {
+/*function iconHandler(link) {
   switch (link.title) {
-    case "MyBama":
-      link.color = "red";
-      link.icon = "assets/images/ua.svg";
-      break;
-    case "Box":
-      link.color = "blue";
-      link.icon = "assets/images/box.svg";
-      break;
-    case "Outlook":
-      link.color = "indego";
-      link.icon = "assets/images/outlook.svg";
-      break;
-    case "VoIP Mailbox":
-      link.color = "gray";
-      link.icon = "assets/images/phone.svg";
-      break;
-    case "Trello":
-      link.color = "light-blue";
-      link.icon = "assets/images/trello.svg";
-      break;
-    case "Slack":
-      link.color = "light-green";
-      link.icon = "assets/images/slack.svg";
-      break;
-    case "Analytics":
-      link.color = "yellow";
-      link.icon = "assets/images/analytics.svg";
-      break;
-    case "BitBucket":
-      link.color = "cyan";
-      link.icon = "assets/images/bitbucket.svg";
-      break;
-    case "Beanstalk":
-      link.color = "green";
-      link.icon = "assets/images/leaf.svg";
-      break;
     case "AMP":
       link.color = "teal";
       link.icon = "assets/images/shield.svg";
@@ -128,6 +160,14 @@ function iconHandler(link) {
       link.color = "gray";
       link.icon = "assets/images/link.svg";
   }
+}*/
+
+function faviconHandler(link) {
+  let domain = new URL(link.url);
+  //return link.icon = `https://www.google.com/s2/favicons?domain=${domain})&sz=128`;
+  domain = domain.hostname //.replace("www.", "");
+  return link.icon = `https://icons.duckduckgo.com/ip3/${domain}.ico`
+  //return link.icon = `https://${domain}/favicon.ico`
 }
 
 
@@ -172,11 +212,15 @@ browser.bookmarks.search("NTP Links").then(function (bookmarkLibrary) {
             let text = document.createTextNode(item.title);
             p.appendChild(text);
 
-            let img = document.createElement("img");
-            img.alt = "";
-            img.src = item.icon;
+            let icon = document.createElement("span");
+            icon.classList.add(item.icon);
+            if (item.iconSet) {
+              icon.classList.add(item.iconSet);
+            } else {
+              icon.classList.add("fa-solid");
+            }
 
-            a.appendChild(img);
+            a.appendChild(icon);
             a.appendChild(p);
             li.appendChild(a);
             ul.appendChild(li);

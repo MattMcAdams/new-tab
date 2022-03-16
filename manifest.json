@@ -12,7 +12,10 @@
       "id": "ntp@mattmcadams.com"
     }
   },
-  "permissions": ["bookmarks"],
+  "options_ui": {
+    "page": "options.html"
+  },
+  "permissions": ["bookmarks", "storage"],
   "chrome_settings_overrides": {
     "homepage": "index.html"
   },

@@ -59,10 +59,18 @@ header button:focus {
   padding-top: calc(var(--section-space) / 2);
   margin-top: calc(var(--section-space) / 2);
 }
-.ntp-links li img {
+.ntp-links li img,
+.ntp-links li span {
   background: var(--color);
   border-radius: 10px;
   margin: 0;
+}
+.ntp-links li span {
+  font-size: 2em;
+  text-align: center;
+  display: block;
+  background: var(--color);
+  padding: 0.75em 0;
 }
 .ntp-links li p {
   margin: 0;
