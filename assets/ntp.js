@@ -7,52 +7,9 @@ var defaults = {
   "icon": "fa-link"
 }
 
-var iconRules = [
-  {
-    "case": "MyBama",
-    "color": "red",
-    "icon": "fa-building-columns"
-  },
-  {
-    "case": "Box",
-    "color": "blue",
-    "icon": "fa-box"
-  },
-  {
-    "case": "Outlook",
-    "color": "indego",
-    "icon": "fa-envelope"
-  },
-  {
-    "case": "VoIP Mailbox",
-    "color": "gray"
-  },
-  {
-    "case": "Trello",
-    "color": "light-blue"
-  },
-  {
-    "case": "Slack",
-    "color": "light-green",
-    "iconSet": "fa-brands",
-    "icon": "fa-slack"
-  },
-  {
-    "case": "Analytics",
-    "color": "yellow"
-  },
-  {
-    "case": "BitBucket",
-    "color": "cyan"
-  },
-  {
-    "case": "Beanstalk",
-    "color": "green"
-  }
-]
 
 
-let test = JSON.parse(localStorage.getItem("ntpPrefs"));
+const PREFS = JSON.parse(localStorage.getItem("ntpPrefs"));
 
 
 function iconHandler (item) {
@@ -60,114 +17,13 @@ function iconHandler (item) {
   item.iconSet = defaults.iconSet;
   item.icon = defaults.icon;
 
-  test.forEach(rule => {
+  PREFS.forEach(rule => {
     if (rule.case == item.title) {
       if (rule.color) { item.color = rule.color }
       if (rule.iconSet) { item.iconSet = rule.iconSet }
       if (rule.icon) { item.icon = rule.icon }
     }
   });
-}
-
-// Handle primary links color and icons if bookmark name matches the test case
-/*function iconHandler(link) {
-  switch (link.title) {
-    case "AMP":
-      link.color = "teal";
-      link.icon = "assets/images/shield.svg";
-      break;
-    case "DynoMapper":
-      link.color = "deep-orange";
-      link.icon = "assets/images/map.svg";
-      break;
-    case "BaseCamp":
-      link.color = "yellow";
-      link.icon = "assets/images/basecamp.svg";
-      break;
-    case "Payroll":
-      link.color = "red";
-      link.icon = "assets/images/link.svg";
-      break;
-    case "Whimsical":
-      link.color = "indego";
-      link.icon = "assets/images/whimsical.svg";
-      break;
-    case "PhotoShelter":
-      link.color = "brown";
-      link.icon = "assets/images/image.svg";
-      break;
-    case "browserStack":
-      link.color = "gray";
-      link.icon = "assets/images/link.svg";
-      break;
-    case "Website":
-      link.color = "cyan";
-      link.icon = "assets/images/website.svg";
-      break;
-    case "GitHub":
-      link.color = "slate";
-      link.icon = "assets/images/github.svg";
-      break;
-    case "Netlify":
-      link.color = "teal";
-      link.icon = "assets/images/netlify.svg";
-      break;
-    case "Hover":
-      link.color = "light-green";
-      link.icon = "assets/images/hover.svg";
-      break;
-    case "Stripe":
-      link.color = "indego";
-      link.icon = "assets/images/stripe.svg";
-      break;
-    case "Drive":
-      link.color = "red";
-      link.icon = "assets/images/drive.svg";
-      break;
-    case "Search Console":
-      link.color = "orange";
-      link.icon = "assets/images/google.svg";
-      break;
-    case "Plausible":
-      link.color = "blue";
-      link.icon = "assets/images/plausible.svg";
-      break;
-    case "Cloud Storage":
-      link.color = "brown";
-      link.icon = "assets/images/gcloud.svg";
-      break;
-    case "Leave Request":
-      link.color = "orange";
-      link.icon = "assets/images/airplane.svg";
-      break;
-    case "Resources Request":
-      link.color = "brown";
-      link.icon = "assets/images/clipboard.svg";
-      break;
-    case "Ghost":
-      link.color = "blue";
-      link.icon = "assets/images/ghost.svg";
-      break;
-    case "Wilson Playground":
-      link.color = "cyan";
-      link.icon = "assets/images/warning-circle.svg";
-      break;
-    case "GB Sandbox":
-      link.color = "light-blue";
-      link.icon = "assets/images/warning-triangle.svg";
-      break;
-    default:
-      link.color = "gray";
-      link.icon = "assets/images/link.svg";
-  }
-}*/
-
-function faviconHandler(link) {
-  let domain = new URL(link.url);
-  //return link.icon = `https://www.google.com/s2/favicons?domain=${domain})&sz=128`;
-  domain = domain.hostname //.replace("www.", "");
-  return link.icon = `https://icons.duckduckgo.com/ip3/${domain}.ico`
-  //return link.icon = `https://${domain}/favicon.ico`
 }
 
 
@@ -230,7 +86,6 @@ browser.bookmarks.search("NTP Links").then(function (bookmarkLibrary) {
     });
   });
 });
-
 
 
 

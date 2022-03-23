@@ -1,3 +1,5 @@
+h1::before, h2::before { content: ":// "; }
+h1::after, h2::after { content: "_"; }
 /** -----------------------------------------------------------------
   * SECTION HEADER
 ------------------------------------------------------------------ */
@@ -7,15 +9,18 @@ header {
   background: var(--color-gray-800);
   color: var(--color-gray-100);
 }
+
 header > div {
   display: grid;
   grid-gap: var(--gutter);
 }
+
 @media (min-width: 420px) {
   header > div {
     grid-template-columns: 2fr 6fr;
   }
 }
+
 header h1 { margin: 0; }
 header form { display: flex; }
 header input {
@@ -25,6 +30,7 @@ header input {
   background: var(--color-gray-100);
   margin: 0;
 }
+
 header button {
   background: var(--color-gray-100);
   border: none;
@@ -32,6 +38,7 @@ header button {
   border-bottom-right-radius: 5px;
   margin: 0;
 }
+
 header button:hover,
 header button:focus {
   background: var(--color-gray-100);
@@ -54,17 +61,20 @@ header button:focus {
   grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
   grid-gap: var(--gutter);
 }
+
 .ntp-links + .ntp-links {
   border-top: 2px solid var(--color-gray-500);
   padding-top: calc(var(--section-space) / 2);
   margin-top: calc(var(--section-space) / 2);
 }
+
 .ntp-links li img,
 .ntp-links li span {
   background: var(--color);
   border-radius: 10px;
   margin: 0;
 }
+
 .ntp-links li span {
   font-size: 2em;
   text-align: center;
@@ -72,20 +82,21 @@ header button:focus {
   background: var(--color);
   padding: 0.75em 0;
 }
+
 .ntp-links li p {
   margin: 0;
   text-align: center;
   font-size: var(--ms--1);
   margin-top: 5px;
 }
+
 .ntp-links li a {
   color: inherit;
   font-weight: normal;
 }
+
 .ntp-links li a:hover,
 .ntp-links li a:focus { text-decoration: none; }
-.ntp-links li a:hover,
-.ntp-links li a:focus img { transform: scale(1.05); }
 
 /* END !SECTION NTP */
 /** -----------------------------------------------------------------
@@ -98,22 +109,26 @@ header button:focus {
   padding: var(--section-space) 0;
   position: relative;
 }
+
 #Reference dl {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   grid-column-gap: var(--gutter);
 }
+
 #Reference dl div {
   display: grid;
   grid-template-columns: 1fr 2fr;
   padding: 0.5rem;
   border-bottom: 1px solid var(--color-gray-500);
 }
+
 #Reference dt,
 #Reference dd {
   margin: 0;
   padding: 0;
 }
+
 #Reference a { color: inherit; }
 #Reference a:hover { text-decoration-color: inherit; }
 #Reference::after {
@@ -125,6 +140,7 @@ header button:focus {
   height: 40px;
   width: 200px;
 }
+
 #Reference::before {
   content: "";
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='370.451' height='60.58' viewBox='0 0 370.451 60.58'%3E%3Cpath id='Path_28' data-name='Path 28' d='M370.451,60.58H0V0H258.825Z' fill='%231c1b22'/%3E%3C/svg%3E%0A");
@@ -134,20 +150,24 @@ header button:focus {
   height: 40px;
   width: 350px;
 }
+
 #Reference .design-toolkit {
   display: grid;
 }
+
 @media (min-width: 500px) {
   #Reference .design-toolkit {
     grid-template-columns: 3fr 1fr;
     grid-gap: var(--gutter);
   }
 }
+
 @media (min-width: 800px) {
   #Reference .design-toolkit {
     grid-gap: var(--section-space);
   }
 }
+
 .design-toolkit .color-swatch .swatch {
   height: 2.2rem;
   width: 2.2rem;
@@ -155,19 +175,23 @@ header button:focus {
   background: var(--color);
   border-radius: 5px;
 }
+
 .design-toolkit .colors {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
 }
+
 .design-toolkit .color-swatch {
   display: grid;
   grid-template-columns: 2.2rem 1fr;
   grid-gap: 5px;
 }
+
 .design-toolkit .color-swatch p,
 .design-toolkit .font-group {
   line-height: 1.2;
 }
+
 .design-toolkit .color-swatch strong,
 .design-toolkit .font-group strong {
   display: block;
@@ -186,11 +210,13 @@ header button:focus {
   padding: 0;
   list-style: none;
 }
+
 #Resources ul {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   grid-column-gap: var(--gutter);
 }
+
 #Resources a {
   color: inherit;
   font-weight: normal;
@@ -199,6 +225,7 @@ header button:focus {
   border-bottom: 1px solid var(--color-gray-200);
   margin-bottom: 1px;
 }
+
 #Resources a:hover {
   text-decoration: none;
   border-bottom: 2px solid var(--color-primary-500);

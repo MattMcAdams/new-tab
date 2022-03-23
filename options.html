@@ -1,29 +1,99 @@
 <!DOCTYPE html>
-
 <html>
 
 <head>
   <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>New Tab Options</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="assets/index.css">
+  <link rel="stylesheet" href="assets/fontawesome/css/all.css">
 </head>
 
-<body>
-  <style>
-    textarea {
-      width: 100%;
-      display: block;
-      height: 50em;
-    }
-  </style>
+<style>
+  body {
+    background: var(--color-gray-800);
+    color: white;
+  }
+  fieldset {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 2rem;
+    background: var(--color-gray-900);
+    border: none;
+    border-radius: 1em;
+  }
+  fieldset label {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  fieldset input,
+  fieldset select {
+    margin: 0;
+    background-color: inherit;
+    color: white;
+    border: 0px solid white;
+    border-bottom: 1px solid white;
+    padding-left: 0;
+    padding-right: 1;
+  }
+  fieldset button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    background: none;
+    border: 0;
+  }
+  #addRow {
+    display: block;
+    width: 100%;
+    padding: calc(var(--space) * 2);
+    background-color: var(--color-gray-900);
+    border-radius: 1em;
+    border: 0px solid transparent;
+  }
+  textarea {
+    background-color: var(--color-gray-900);
+    color: white;
+    border: 0;
+    border-radius: 1rem;
+  }
+  option {
+    color: black;
+  }
+</style>
+<body class="options">
+  <header>
+    <div class="container">
+      <h1>NTP Options</h1>
+    </div>
+  </header>
 
-  <form>
-    <label>JSON Preferences
-      <textarea type="text" id="color"></textarea>
-    </label>
-    <button type="submit">Save</button>
-  </form>
+  <main>
+    <section class="container">
+      <p>For a list of available icons, please refer to the <a href="https://fontawesome.com/search?m=free">FontAwesome 6.0 page</a></p>
+      <form id="optForm">
+        <div id="liveRows">
+
+        </div>
+        <button id="addRow"><i class="fa-regular fa-square-plus"></i> Add Row</button>
+        <button type="submit">Save</button>
+      </form>
+
+      <h2 style="margin: calc(var(--space) * 2) 0 var(--space)">Raw Preferences</h2>
+      <form id="rawForm">
+        <label style="margin-bottom: 0;">JSON Preferences
+          <textarea type="text" id="raw" style="margin-bottom: 0;"></textarea>
+        </label>
+        <button type="submit">Save</button>
+      </form>
+    </section>
+
+  </main>
 
   <script src="assets/options.js"></script>
 
 </body>
-
 </html>

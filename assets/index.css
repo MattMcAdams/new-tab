@@ -267,9 +267,6 @@ h3 {
   font-size: var(--ms-2);
 }
 
-h1::before, h2::before { content: ":// "; }
-h1::after, h2::after { content: "_"; }
-
 h4, .txt-h4 { font-size: var(--ms-1); }
 h5, .txt-h5 { font-size: var(--ms-1); }
 h6, .txt-h6, label, th, legend { font-size: var(--ms-0); font-weight: bold; }
@@ -555,9 +552,9 @@ fieldset {
   background-color: var(--color-gray-100);
 }
 
-fieldset > :last-child {
+/* fieldset > :last-child {
   margin-bottom: 1rem;
-}
+} */
 
 legend {
   padding: 0 0.5em;
@@ -568,18 +565,24 @@ legend {
 .button, button, input, select, textarea, datalist {
   font-family: inherit;
   font-size: 100%;
-  line-height: inherit;
+  line-height: 1.6;
   box-sizing: border-box;
 
   padding: calc(var(--space) / 4) calc(var(--space) / 2);
   border: 1px solid var(--color-gray-500);
   margin: 0;
   margin-bottom: var(--flow-space);
+  background: transparent;
 }
 
 /* Normalize input width */
 .button, input, select, textarea, datalist {
   width: 100%;
+}
+
+/* Standardize select box sizing */
+select {
+  -webkit-appearance: menulist-button;
 }
 
 textarea {
