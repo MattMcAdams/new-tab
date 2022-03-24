@@ -2,9 +2,11 @@ var libraryDebug = false;
 var linksDebug = false;
 
 var defaults = {
-  "color": "gray",
-  "iconSet": "fa-solid",
-  "icon": "fa-link"
+  color: "gray",
+  iconSet: "fa-solid",
+  icon: "fa-link",
+  scheme: "https://",
+  searchEngine: "https://duckduckgo.com/?q="
 }
 
 
@@ -136,9 +138,6 @@ browser.bookmarks.search("Library").then(function(bookmarkLibrary) {
 
 
 // Handle Search Field
-// Set default URL scheme and default search engine
-var scheme = "https://";
-var searchEngine = "https://duckduckgo.com/?q=";
 
 function searchRedirect() {
   let value = document.getElementById("search").value;
@@ -157,10 +156,10 @@ function searchRedirect() {
     value.includes(".dev") |
     value.includes(".us")
   ) {
-    window.location.href = scheme + value;
+    window.location.href = defaults.scheme + value;
   } else {
     // Otherwise send the query to search engine
-    window.location.href = searchEngine + value;
+    window.location.href = defaults.searchEngine + value;
   }
 }
 
