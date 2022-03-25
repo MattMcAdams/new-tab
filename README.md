@@ -2,6 +2,8 @@
 
 This is my personal new tab page extension for Firefox! I wanted a way to have more control over the content on the new tab page, including creating sections of links and quick reference.
 
+![screenshot](screenshot.png)
+
 ## Usage
 
 This will only work in [Firefox Developer Edition](https://www.mozilla.org/en-US/firefox/developer/) (until I can figure out how to [sign](https://extensionworkshop.com/documentation/publish/signing-and-distribution-overview/#signing-your-addons) the stupid thing).
