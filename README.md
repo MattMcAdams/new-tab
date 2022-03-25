@@ -25,6 +25,8 @@ You can customize the icons displayed in the top section by going to the customi
 
 Please refer to [font awesome](https://fontawesome.com/search?m=free) for a list of all available icons and class names. This extension currently only supports free icons in the "solid" and "brands" icon sets.
 
+Customization data is stored as a JSON object in the browser's local storage. This *should* be a stable enough place to store the data unless you manually clear site data when clearning things like cache and browsing history. I've exposed the JSON in a textarea at the bottom of the options page. You can use this to copy and paste bulk preferences. This can be useful for creating backups of your customizations or even sharing customizations with others.
+
 ## Updating the addon
 
 The extension uses the [bookmarks API](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/bookmarks), so new links can be added by adding bookmarks to the correct folders in bookmark manager.
@@ -51,3 +53,13 @@ The middle section is currently hard coded. I will be adding more to this area a
 The bottom section will create sections for every child folder in the one named "Library" and can be used to list bookmarks under a given topic or group. For example, you may want to create a section for a reading list and another for inspiration. The titles for each section is copied directly from the name of the bookmark folder the section is generated from.
 
 > **NOTE** that the "Library" folder requires sub folders to display links in that area. Also note that the folders "NTP Links" and "Library" are REQUIRED for the extension to work. I'll consider adding error handling in the future to make the extension a little more resiliant.
+
+## Disclaimer
+
+I made this primarily for myself, tailored to my needs and preferences, so I don't really intend to release this as a plugin that I'd ever expect anyone but me to use. In fact, I never really planned to make it open source at all.
+
+It was a challenging project and finding documentation for a lot of the functionality here was not easy or was overly complicated. I decided to make this code public and continue to expand on what it can handle so that others who are interested in developing something like this could look through my code for inspiration. Its also just a really cool project I wanted to show some friends :)
+
+Hope someone out there also thinks this project is cool and that my humble code helps someone trying to solve similar problems. Feel free to fork this and use as a starting point to really make your own.
+
+Thanks!
