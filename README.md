@@ -10,7 +10,7 @@ This will only work in [Firefox Developer Edition](https://www.mozilla.org/en-US
 
 1. Clone the repo and open "about:debugging" in Firefox Developer Edition.
 2. Then select "load temporary addon" and navigate to manifest.json in this directory to load it.
-3. You'll need to repeat this process each time you restart firefox until I publish a proper signed release.
+3. You'll need to repeat this process each time you restart Firefox until I publish a proper signed release.
 
 ## Customization
 
@@ -25,13 +25,13 @@ You can customize the icons displayed in the top section by going to the customi
 
 Please refer to [font awesome](https://fontawesome.com/search?m=free) for a list of all available icons and class names. This extension currently only supports free icons in the "solid" and "brands" icon sets.
 
-Customization data is stored as a JSON object in the browser's local storage. This *should* be a stable enough place to store the data unless you manually clear site data when clearning things like cache and browsing history. I've exposed the JSON in a textarea at the bottom of the options page. You can use this to copy and paste bulk preferences. This can be useful for creating backups of your customizations or even sharing customizations with others.
+Customization data is stored as a JSON object in the browser's local storage. This *should* be a stable enough place to store the data unless you manually clear site data when clearing things like cache and browsing history. I've exposed the JSON in a text area at the bottom of the options page. You can use this to copy and paste bulk preferences. This can be useful for creating backups of your customizations or even sharing customizations with others.
 
 ## Updating the addon
 
 The extension uses the [bookmarks API](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/bookmarks), so new links can be added by adding bookmarks to the correct folders in bookmark manager.
 
-The bookmarks should be organized in this foldr structure using the Bookmark Manager:
+The bookmarks should be organized in this folder structure using the Bookmark Manager:
 
 ```txt
 All Bookmarks
@@ -44,7 +44,7 @@ All Bookmarks
         └── Section
 ```
 
-The top area of the new tab page will create a new section for each folder inside the one named "NTP Links". Each section will display all bookamrks inside those child folders.
+The top area of the new tab page will create a new section for each folder inside the one named "NTP Links". Each section will display all bookmarks inside those child folders.
 
 > **NOTE** that these sub folders are currently required. I plan to modify the script in the future to display links at the root of "NTP Links" at the very top so that the child folders are no longer necessary. This will help people who do not wish to have multiple sections in the top area.
 
@@ -52,7 +52,7 @@ The middle section is currently hard coded. I will be adding more to this area a
 
 The bottom section will create sections for every child folder in the one named "Library" and can be used to list bookmarks under a given topic or group. For example, you may want to create a section for a reading list and another for inspiration. The titles for each section is copied directly from the name of the bookmark folder the section is generated from.
 
-> **NOTE** that the "Library" folder requires sub folders to display links in that area. Also note that the folders "NTP Links" and "Library" are REQUIRED for the extension to work. I'll consider adding error handling in the future to make the extension a little more resiliant.
+> **NOTE** that the "Library" folder requires sub folders to display links in that area. Also note that the folders "NTP Links" and "Library" are REQUIRED for the extension to work. I'll consider adding error handling in the future to make the extension a little more resilient.
 
 ## Disclaimer
 
