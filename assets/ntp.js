@@ -19,13 +19,15 @@ function iconHandler (item) {
   item.iconSet = defaults.iconSet;
   item.icon = defaults.icon;
 
-  PREFS.forEach(rule => {
-    if (rule.case == item.title) {
-      if (rule.color) { item.color = rule.color }
-      if (rule.iconSet) { item.iconSet = rule.iconSet }
-      if (rule.icon) { item.icon = rule.icon }
-    }
-  });
+  if (PREFS) {
+    PREFS.forEach(rule => {
+      if (rule.case == item.title) {
+        if (rule.color) { item.color = rule.color }
+        if (rule.iconSet) { item.iconSet = rule.iconSet }
+        if (rule.icon) { item.icon = rule.icon }
+      }
+    });
+  }
 }
 
 
