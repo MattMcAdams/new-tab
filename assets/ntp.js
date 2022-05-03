@@ -10,7 +10,6 @@ var defaults = {
 }
 
 
-
 const PREFS = JSON.parse(localStorage.getItem("ntpPrefs"));
 
 
