@@ -63,3 +63,14 @@ It was a challenging project and finding documentation for a lot of the function
 Hope someone out there also thinks this project is cool and that my humble code helps someone trying to solve similar problems. Feel free to fork this and use as a starting point to really make your own.
 
 Thanks!
+
+## Notes
+
+### Content origin policy
+
+This had to be adjusted to allow resources to be loaded from an external CDN (FontAwesome in this case). Doing so was not completely straightforward, so here are some useful links to explain that if ever needed in the future:
+
+- [High level overview of CSP](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP)
+- [CSP with web extensions](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Content_Security_Policy)
+- [Updating the manifest CSP](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/manifest.json/content_security_policy)
+- [script-src](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/script-src)
