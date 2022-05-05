@@ -73,11 +73,7 @@ browser.bookmarks.search("NTP Links").then(function (bookmarkLibrary) {
 
             let icon = document.createElement("span");
             icon.classList.add(item.icon);
-            if (item.iconSet) {
-              icon.classList.add(item.iconSet);
-            } else {
-              icon.classList.add("fa-solid");
-            }
+            icon.classList.add(item.iconSet);
 
             a.appendChild(icon);
             a.appendChild(p);
