@@ -46,13 +46,15 @@ All Bookmarks
 
 The top area of the new tab page will create a new section for each folder inside the one named "NTP Links". Each section will display all bookmarks inside those child folders.
 
-> **NOTE** that these sub folders are currently required. I plan to modify the script in the future to display links at the root of "NTP Links" at the very top so that the child folders are no longer necessary. This will help people who do not wish to have multiple sections in the top area.
+> [!NOTE]
+> These sub folders are currently required. I plan to modify the script in the future to display links at the root of "NTP Links" at the very top so that the child folders are no longer necessary. This will help people who do not wish to have multiple sections in the top area.
 
 The middle section is currently hard coded. I will be adding more to this area as needed for my own preference. I'm not sure how to open that area up for end user customization since I designed it to accept an arbitrary amount of content as needed. If you would like to modify this section, please make a fork of this project and customize it as desired. One day I may find a way to solve this in a reliable and secure way.
 
 The bottom section will create sections for every child folder in the one named "Library" and can be used to list bookmarks under a given topic or group. For example, you may want to create a section for a reading list and another for inspiration. The titles for each section is copied directly from the name of the bookmark folder the section is generated from.
 
-> **NOTE** that the "Library" folder requires sub folders to display links in that area. Also note that the folders "NTP Links" and "Library" are REQUIRED for the extension to work. I'll consider adding error handling in the future to make the extension a little more resilient.
+> [!NOTE]
+> The "Library" folder requires sub folders to display links in that area. Also note that the folders "NTP Links" and "Library" are REQUIRED for the extension to work. I'll consider adding error handling in the future to make the extension a little more resilient.
 
 ## Disclaimer
 
